@@ -1,4 +1,4 @@
-package TestCases;
+package Driver;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-public class TestBase
+public class Driver
 {
     public static WebDriver driver = null;
 
@@ -18,13 +18,13 @@ public class TestBase
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://phptravels.com/demo/");
+        driver.get("https://www.saucedemo.com");
     }
 
     @AfterSuite
     public void TeardownTest()
     {
-        TestBase.driver.quit();
+        Driver.driver.quit();
     }
 }
 
