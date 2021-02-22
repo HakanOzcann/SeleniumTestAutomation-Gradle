@@ -1,4 +1,4 @@
-package Driver;
+package Utilities;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +18,7 @@ public class Driver
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://www.saucedemo.com");
+        driver.get("https://www.spotify.com/tr/");
     }
 
     @AfterSuite
