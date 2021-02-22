@@ -5,21 +5,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
-public class Download
+public class SignUp
 {
     WebDriver driver;
 
-    public Download(WebDriver driver)
+    public SignUp(WebDriver driver)
     {
         this.driver = driver;
     }
 
-    @FindBy(xpath = "/html/body/div[2]/div[1]/header/div/nav/ul/li[2]/a")
-    WebElement download;
+    @FindBy(xpath = "/html/body/div[2]/div/header/div/nav/ul/li[5]/a")
+    WebElement signUp;
 
-    public void Download()
+    public void SignUp()
     {
-        download.click();
+        signUp.click();
     }
 
 

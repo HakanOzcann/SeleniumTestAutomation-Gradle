@@ -1,17 +1,14 @@
 package TestCases;
 
-import Pages.Download;
-import Pages.Support;
+import Pages.*;
 import Utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-import Pages.Homepage;
-import Pages.Premium;
 
 public class TestCases extends Driver
 {
 
-    @Test
+    @Test(priority = 0)
     public void Homepage() throws Exception
     {
         driver.get("https://www.spotify.com/tr/");
@@ -42,7 +39,20 @@ public class TestCases extends Driver
     }
 
 
+    @Test
+    public void SignUp() throws Exception
+    {
+        SignUp signUp = PageFactory.initElements(driver, SignUp.class);
+        signUp.SignUp();
+    }
 
+
+    @Test
+    public void LogIn() throws Exception
+    {
+        Login login = PageFactory.initElements(driver, Login.class);
+        login.loginPage();
+    }
 
 }
 
