@@ -22,6 +22,13 @@ public class Homepage
         homepage.click();
     }
 
+    @FindBy(id = "generic-btn-premium")
+    WebElement free;
+
+    public void Free()
+    {
+        free.click();
+    }
 
 }
 

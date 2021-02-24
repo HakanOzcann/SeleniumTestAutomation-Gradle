@@ -14,13 +14,23 @@ public class Download
         this.driver = driver;
     }
 
-    @FindBy(xpath = "/html/body/div[2]/div[1]/header/div/nav/ul/li[2]/a")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[1]/header/div/nav/ul/li[3]/a")
     WebElement download;
 
     public void Download()
     {
         download.click();
     }
+
+    @FindBy(linkText = "İndir")
+    WebElement clickDownload;
+
+    public void ClickDownload()
+    {
+        clickDownload.click();
+    }
+
+
 
 
 }

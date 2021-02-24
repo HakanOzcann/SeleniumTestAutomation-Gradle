@@ -25,5 +25,21 @@ public class Premium
         premium.click();
     }
 
+    @FindBy(xpath = "//*[@id=\"HERO-0\"]/article/header/div/div[3]/div/a")
+    WebElement showPlans;
+
+    public void ShowPlans()
+    {
+        showPlans.click();
+    }
+
+    @FindBy(linkText = "Şartlar ve koşullar geçerlidir.")
+    WebElement conditions;
+
+    public void Conditions()
+    {
+        conditions.click();
+    }
+
 }
 
