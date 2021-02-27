@@ -28,9 +28,9 @@ public class Driver {
     }
 
     @AfterMethod
-    public void ScreenshotOnFailure(ITestResult result) {
+    public void ScreenshotOnPass(ITestResult result) {
 
-        if (ITestResult.FAILURE == result.getStatus()) {
+        if (ITestResult.SUCCESS == result.getStatus()) {
 
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
@@ -39,10 +39,14 @@ public class Driver {
                 try {
                     FileHandler.copy(source, new File("/Users/hakanozcan/Desktop/" + result.getName() + ".png"));
                     System.out.println("Screenshot taken");
-                } catch (IOException e) {
+                }
+                catch (IOException e)
+                {
                     e.printStackTrace();
                 }
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
         }
@@ -53,6 +57,7 @@ public class Driver {
     {
         Driver.driver.quit();
     }
+
 }
 
 
