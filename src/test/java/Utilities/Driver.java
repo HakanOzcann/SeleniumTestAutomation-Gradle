@@ -37,7 +37,32 @@ public class Driver {
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
                 try {
-                    FileHandler.copy(source, new File("/Users/hakanozcan/Desktop/" + result.getName() + ".png"));
+                    FileHandler.copy(source, new File("/Users/hakanozcan/Desktop/Passed/" + result.getName() + ".png"));
+                    System.out.println("Screenshot taken");
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+            catch (Exception e)
+            {
+                System.out.println("Exception while taking screenshot " + e.getMessage());
+            }
+        }
+    }
+
+    @AfterMethod
+    public void ScreenshotOnFailure(ITestResult result) {
+
+        if (ITestResult.FAILURE == result.getStatus()) {
+
+            try {
+                TakesScreenshot ts = (TakesScreenshot) driver;
+                File source = ts.getScreenshotAs(OutputType.FILE);
+
+                try {
+                    FileHandler.copy(source, new File("/Users/hakanozcan/Desktop/Failure/" + result.getName() + ".png"));
                     System.out.println("Screenshot taken");
                 }
                 catch (IOException e)
